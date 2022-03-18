@@ -1,5 +1,6 @@
 
-/**         */
+/**  11. Матрицу 6x6 заполнить случайными числами. Вывести на экран саму матрицу и номера строк, в
+ которых число 5 встречается три и более раз.        */
 
 package second_section;
 
@@ -21,7 +22,7 @@ public class Task12EpamSecondSection {
             System.out.println();
         }
 
-        System.out.print("\nRows who contains the digit \"3\" 3 or more times:\n\n");
+        System.out.print("\nRows who contains the digit \"5\" 3 or more times:\n\n");
 
         for (int i = 0; i < matrix.length; i++) {
             int counter = 0;
