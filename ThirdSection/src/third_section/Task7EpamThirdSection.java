@@ -1,5 +1,5 @@
 
-/**  You need to check is an given word palindrome or not   */
+/**  You need to check is a given word palindrome or not   */
 
 package third_section;
 
