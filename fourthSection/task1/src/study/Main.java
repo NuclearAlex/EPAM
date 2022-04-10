@@ -40,17 +40,28 @@ public class Main {
                 System.err.println("You entered invalid value");
                 return;
             }
-            StringBuilder findTrain = new StringBuilder();
-            for (Train train : trains) {
-                if (enter != train.getNumberOfTrain()) {
-                } else {
-                    findTrain.append(train);
-                }
-            }
-            if (findTrain.length() == 0) {
+            // Variant 1
+//            StringBuilder findTrain = new StringBuilder();
+//            for (Train train : trains) {
+//                if (enter != train.getNumberOfTrain()) {
+//                } else {
+//                    findTrain.append(train);
+//                }
+//            }
+//            if (findTrain.length() == 0) {
+//                System.err.println("Sorry, but train with this number not found");
+//            } else {
+//                System.out.println(findTrain);
+//            }
+            // Variant 2
+            Train t = Arrays.stream(trains)
+                    .filter(train -> enter == train.getNumberOfTrain())
+                    .findFirst()
+                    .orElse(null);
+            if (t == null) {
                 System.err.println("Sorry, but train with this number not found");
             } else {
-                System.out.println(findTrain);
+                System.out.println(t);
             }
         } catch (InputMismatchException e) {
             System.err.println("You are stupid, because you entered string but query required enter digit");
