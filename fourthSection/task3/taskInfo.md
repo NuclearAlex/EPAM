@@ -1,6 +1,6 @@
 ## Task info:  
 
-### Create class Customer which contain next fields:  
+### Create class Customer which contain next fields:
 ***1. id;***  
 ***2. surname;***  
 ***3. name;***  
