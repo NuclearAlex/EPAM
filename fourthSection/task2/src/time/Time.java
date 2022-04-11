@@ -1,7 +1,27 @@
 package time;
 
 public class Time {
-    int allSeconds;
+    private int allSeconds;
+    public Time(int hours, int minutes, int seconds) {
+        if (hours < 0 || hours > 24) {
+            System.out.println("You entered invalid value of hours, so this value setup to 0");
+            this.allSeconds = 0;
+        } else {
+            this.allSeconds = hours * 3600;
+        }
+        if (minutes < 0 || minutes > 60) {
+            System.out.println("You entered invalid value of minutes, so this value setup to 0");
+            this.allSeconds += 0;
+        } else {
+            this.allSeconds += minutes * 60;
+        }
+        if (seconds < 0 || seconds > 60) {
+            System.out.println("You entered invalid value of seconds, so this value setup to 0");
+            this.allSeconds += 0;
+        } else {
+            this.allSeconds += seconds;
+        }
+    }
     public Time(int seconds) {
         this.allSeconds = seconds;
     }
