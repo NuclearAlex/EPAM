@@ -37,18 +37,23 @@ public class Main {
     }
 
     private static void printDataOfSortedArray(Customer[] customers) {
-        Comparator<Customer> comp = (o1, o2) -> {
-            int x = 0;
-            for (int i = 0; i < o1.getSurName().length() - 1; i++) {
-                x = Character.compare(o1.getSurName().charAt(i), o2.getSurName().charAt(i));
-                if (x == 0) {
-                    x += Character.compare(o1.getSurName().charAt(i + 1), o2.getSurName().charAt(i + 1));
-                } else {
-                    break;
-                }
-            }
-            return x;
-        };
+
+        // Variant 1
+        Comparator<Customer> comp = Comparator.comparing(Customer::getSurName);
+
+        // Variant 2
+//        Comparator<Customer> comp = (o1, o2) -> {
+//            int x = 0;
+//            for (int i = 0; i < o1.getSurName().length() - 1; i++) {
+//                x = Character.compare(o1.getSurName().charAt(i), o2.getSurName().charAt(i));
+//                if (x == 0) {
+//                    x += Character.compare(o1.getSurName().charAt(i + 1), o2.getSurName().charAt(i + 1));
+//                } else {
+//                    break;
+//                }
+//            }
+//            return x;
+//        };
         Arrays.sort(customers, comp);
         printDataOfArray(customers);
     }
